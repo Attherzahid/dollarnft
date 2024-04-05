@@ -783,6 +783,9 @@ body {
       .section-title {
         margin-bottom: 10px;
       }
+      .card {
+        max-width: 320px;
+      }
     }
   }
 }
@@ -799,7 +802,6 @@ body {
       padding: 15px 40px;
     }
   }
-
 
   .header {
     padding: 20px 10px;
@@ -1030,12 +1032,15 @@ body {
       }
     }
     .utilities {
+      padding: 100px 0 120px;
       .section-title {
         font-size: 30px;
+        margin-bottom: 60px;
         color: $primary !important;
       }
       .card {
-        margin: 50px 0 50px 0;
+        max-width: 100%;
+        margin: 120px 0 20px 0;
         &:after {
           top: -30px;
           left: 50%;
@@ -1047,22 +1052,26 @@ body {
         }
       }
       .card.right {
-        margin: 50px 0 50px 0;
+        margin: 120px 0 20px 0;
         &:after {
           left: 50%;
           right: auto;
         }
       }
       #timeline {
+        .row {
+          margin: 0;
+        }
         &:after {
           display: none;
         }
         .section-title {
           color: $white !important;
+          font-size: 24px;
         }
         .bullet {
           left: 50%;
-          top: 40px;
+          top: 80px;
           transform: translate(-50%, 0);
           width: 30px;
           height: 30px;
@@ -1085,6 +1094,45 @@ body {
           &:before { // Dotted Horizontal Line ==========
             margin-left: 0;
           }
+        }
+      }
+      .slick-slider {
+        .slick-slide {
+          padding-bottom: 10px;
+        }
+        .slick-arrow {
+          background: #000;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          z-index: 999;
+          bottom: -40px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          top: auto;
+          right: auto;
+          &:before {
+            display: none;
+          }
+          &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: url("./../img/arrow.svg") no-repeat center/contain;
+            width: 20px;
+            height: 12px;
+          }
+        }
+        .slick-arrow.slick-prev {
+          margin-left: -20px;
+          &:after {
+            transform: translate(-50%, -50%) scale(-1);
+          }
+        }
+        .slick-arrow.slick-next {
+          margin-left: 20px;
         }
       }
     }
