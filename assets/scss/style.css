@@ -38,9 +38,10 @@ body .object-main img {
   width: auto;
 }
 body .animate-bar {
+  width: 100vw;
+  transform: rotate(-2deg);
   position: relative;
-  z-index: 2;
-  width: 110%;
+  z-index: 1;
 }
 body .animate-bar:after {
   content: "";
@@ -50,10 +51,13 @@ body .animate-bar:after {
   background: #FFFFE6;
   width: 110%;
   height: 100px;
-  transform: rotate(-2deg) translate(-50%, 0);
+  transform: translate(-50%, 0) rotate(2deg);
   z-index: -1;
 }
-body .animate-bar .bar {
+body .animate-bar .bar-track {
+  min-width: -moz-min-content;
+  min-width: min-content;
+  white-space: nowrap;
   background: #FFF700;
   font-family: "luckiest_guyregular";
   border-top: 6px solid #000;
@@ -62,8 +66,19 @@ body .animate-bar .bar {
   font-size: 32px;
   display: flex;
   align-items: center;
-  transform: rotate(-2deg) translate(-5%, 0);
   transform-origin: left bottom;
+  animation: marquee 30s linear infinite;
+}
+body .animate-bar.hero-bar::after {
+  height: 40px;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
 }
 body .section-title {
   font-size: 48px;
@@ -173,7 +188,7 @@ body .text-primary {
   position: relative;
 }
 .main .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   padding: 100px 0 150px;
   display: flex;
   align-items: center;
@@ -238,16 +253,6 @@ body .text-primary {
   height: 100%;
   border-radius: 24px;
   transform: rotate(6deg);
-}
-.main .hero .animate-bar {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-.main .hero .animate-bar .bar {
-  transform: rotate(-2deg) translate(0%, 0);
 }
 .main .about {
   background: #FFFFE6;

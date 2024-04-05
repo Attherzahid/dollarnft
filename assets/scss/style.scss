@@ -58,9 +58,10 @@ body {
     }
   }
   .animate-bar {
+    width: 100vw;
+    transform: rotate(-2deg);
     position: relative;
-    z-index: 2;
-    width: 110%;
+    z-index: 1;
     &:after {
       content: '';
       position: absolute;
@@ -69,10 +70,12 @@ body {
       background: #FFFFE6;
       width: 110%;
       height: 100px;
-      transform: rotate(-2deg) translate(-50%, 0);
+      transform:  translate(-50%, 0) rotate(2deg);
       z-index: -1;
     }
-    .bar {
+    .bar-track {
+      min-width: min-content;
+      white-space: nowrap;
       background: $primary;
       font-family: 'luckiest_guyregular';
       border-top: 6px solid $black;
@@ -81,8 +84,18 @@ body {
       font-size: 32px;
       display: flex;
       align-items: center;
-      transform: rotate(-2deg) translate(-5%, 0);
       transform-origin: left bottom;
+      animation: marquee 30s linear infinite;
+    }
+    &.hero-bar {
+      &::after {
+        height: 40px;
+      }
+    }
+    
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100vw); }
     }
   }
   .section-title {
@@ -201,7 +214,7 @@ body {
     position: relative;
   }
   .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     padding: 100px 0 150px;
     display: flex;
     align-items: center;
@@ -269,17 +282,8 @@ body {
         transform: rotate(6deg);
       }
     }
-    .animate-bar {
-      position: absolute;
-      bottom: 0;
-      z-index: 2;
-      left: 50%;
-      transform: translate(-50%, 0);
-      .bar {
-        transform: rotate(-2deg) translate(0%, 0);
-      }
-    }
   }
+
   .about {
     background: #FFFFE6;
     padding: 110px 0 180px;
