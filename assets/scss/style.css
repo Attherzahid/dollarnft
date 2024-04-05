@@ -177,6 +177,24 @@ body .text-primary {
   padding: 100px 0 150px;
   display: flex;
   align-items: center;
+  position: relative;
+}
+.main .hero::before, .main .hero::after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 144px;
+  background-color: #FFF700;
+  filter: blur(140px);
+  z-index: 1;
+}
+.main .hero::before {
+  left: 0;
+  bottom: 82px;
+}
+.main .hero::after {
+  right: 12px;
+  top: 118px;
 }
 .main .hero .caption {
   color: #fff;
@@ -368,7 +386,8 @@ body .text-primary {
   height: 600px;
   width: 100%;
   transform: skew(0deg, 3deg);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main .enroll-section .container {
   position: relative;
@@ -384,7 +403,8 @@ body .text-primary {
   max-width: 732px;
   margin-left: auto;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .main .enroll-section .card .card-body {
   z-index: 2;
@@ -753,6 +773,11 @@ body .text-primary {
   .header .navbar .navbar-collapse .navbar-nav {
     padding: 20px;
   }
+  .main .hero::before, .main .hero::after {
+    width: 40px;
+    height: 100px;
+    filter: blur(100px);
+  }
   .main .hero .img-wrapper {
     max-width: 200px;
     margin: 0 auto;
@@ -1064,6 +1089,4 @@ body .text-primary {
     margin: 0 auto;
     display: block;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

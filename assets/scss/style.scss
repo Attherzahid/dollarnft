@@ -205,6 +205,25 @@ body {
     padding: 100px 0 150px;
     display: flex;
     align-items: center;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 75px;
+      height: 144px;
+      background-color: $primary;
+      filter: blur(140px);
+      z-index: 1;
+    }
+    &::before {
+      left: 0;
+      bottom: 82px;
+    }
+    &::after {
+      right: 12px;
+      top: 118px;
+    }
     .caption {
       color: $white;
       position: relative;
@@ -829,6 +848,12 @@ body {
   }
   .main {
     .hero {
+      &::before,
+      &::after {
+        width: 40px;
+        height: 100px;
+        filter: blur(100px);
+      }
       .img-wrapper {
         max-width: 200px;
         margin: 0 auto;
