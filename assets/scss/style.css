@@ -75,17 +75,31 @@ body .animate-bar .bar-track {
   display: flex;
   align-items: center;
   transform-origin: left bottom;
-  animation: marquee 30s linear infinite;
+}
+body .animate-bar .bar-track.ltr {
+  animation: ltr 30s linear infinite alternate-reverse;
+}
+body .animate-bar .bar-track.rtl {
+  animation: rtl 30s linear infinite alternate-reverse;
+  transform: translateX(-100vw);
 }
 body .animate-bar.hero-bar::after {
   height: 40px;
 }
-@keyframes marquee {
+@keyframes ltr {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-100vw);
+  }
+}
+@keyframes rtl {
+  from {
+    transform: translateX(-100vw);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 body .section-title {

@@ -95,7 +95,13 @@ body {
       display: flex;
       align-items: center;
       transform-origin: left bottom;
-      animation: marquee 30s linear infinite;
+      &.ltr {
+        animation: ltr 30s linear infinite alternate-reverse;
+      }
+      &.rtl {
+        animation: rtl 30s linear infinite alternate-reverse;
+        transform: translateX(-100vw);
+      }
     }
     &.hero-bar {
       &::after {
@@ -103,9 +109,13 @@ body {
       }
     }
     
-    @keyframes marquee {
+    @keyframes ltr {
       from { transform: translateX(0); }
       to { transform: translateX(-100vw); }
+    }
+    @keyframes rtl {
+      from { transform: translateX(-100vw); }
+      to { transform: translateX(0); }
     }
   }
   .section-title {
