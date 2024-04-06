@@ -682,9 +682,6 @@ body .text-primary {
   }
 }
 @media (max-width: 1200px) {
-  body .animate-bar:after {
-    height: 60px;
-  }
   body .animate-bar .bar {
     font-size: 20px;
   }
