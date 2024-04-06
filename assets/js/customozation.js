@@ -1,9 +1,16 @@
 jQuery(document).ready(function ($) {
     // Parallex ========
     var image = document.getElementsByClassName('parallexBg');
-    new simpleParallax(image);
+    new simpleParallax(image, {
+        maxTransition: 200
+    });
 
-    // AOS
+    // AOS ==========
+    AOS.init({
+        once: true,
+    });
+
+    // Slick ==========
     $('.batenomics #slider').slick({
         responsive: [
             {

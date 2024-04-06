@@ -76,7 +76,7 @@ body {
       content: '';
       position: absolute;
       left: 50%;
-      bottom: 0;
+      bottom: -1px;
       background: #FFFFE6;
       width: 110%;
       height: 100px;
@@ -353,7 +353,8 @@ body {
     .labelWrapper {
       margin: 40px 0;
       .obj {
-        max-width: 115px;
+        width: auto;
+        height: 100px;
         display: block;
         margin-left: 15px;
       }
@@ -986,7 +987,6 @@ body {
         margin: 20px 0;
         text-align: center;
         .obj {
-          max-width: 80px;
           margin: 0 auto;
         }
         .label {
