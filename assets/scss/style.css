@@ -29,6 +29,14 @@ body {
   color: #000;
   background-color: #313000;
 }
+body.active .object-main {
+  right: 68px;
+  bottom: 52px;
+}
+body.active .object-main img {
+  transform: scaleX(-1);
+  height: 60vh;
+}
 body .object-main {
   position: fixed;
   bottom: 0;
@@ -194,8 +202,7 @@ body .text-primary {
   align-items: center;
   position: relative;
 }
-.main .hero::before, .main .hero::after {
-  content: "";
+.main .hero .obj {
   position: absolute;
   width: 75px;
   height: 144px;
@@ -203,11 +210,11 @@ body .text-primary {
   filter: blur(140px);
   z-index: 1;
 }
-.main .hero::before {
+.main .hero .obj-1 {
   left: 0;
   bottom: 82px;
 }
-.main .hero::after {
+.main .hero .obj-2 {
   right: 12px;
   top: 118px;
 }
@@ -380,6 +387,22 @@ body .text-primary {
 .main .how-to-buy .card p {
   font-weight: 700;
   margin: 0;
+}
+.main .how-to-buy .obj {
+  position: absolute;
+  width: 75px;
+  height: 144px;
+  background-color: #FFF700;
+  filter: blur(140px);
+  z-index: 1;
+}
+.main .how-to-buy .obj-1 {
+  left: 0;
+  bottom: 82px;
+}
+.main .how-to-buy .obj-2 {
+  right: 12px;
+  top: 118px;
 }
 .main .enroll-section {
   margin-top: -50px;

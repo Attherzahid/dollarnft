@@ -63,4 +63,17 @@ jQuery(document).ready(function ($) {
         ]
     });
 
+
+    var controller = new ScrollMagic.Controller();
+
+    new ScrollMagic.Scene({
+        triggerElement: ".footer",
+        triggerHook: 1,
+        duration: function() {
+            return $("#sec1").outerHeight();
+        }
+    })
+    .setClassToggle("body", "active")
+    // .addIndicators()
+    .addTo(controller);
 });

@@ -49,6 +49,16 @@ body {
   font-family: 'balsamiq_sansregular';
   color: $black;
   background-color: $accent;
+  &.active {
+    .object-main {
+      right: 68px;
+      bottom: 52px;
+      img {
+        transform: scaleX(-1);
+        height: 60vh;
+      }
+    }
+  }
   .object-main {
     position: fixed;
     bottom: 0;
@@ -219,9 +229,7 @@ body {
     display: flex;
     align-items: center;
     position: relative;
-    &::before,
-    &::after {
-      content: "";
+    .obj {
       position: absolute;
       width: 75px;
       height: 144px;
@@ -229,11 +237,11 @@ body {
       filter: blur(140px);
       z-index: 1;
     }
-    &::before {
+    .obj-1 {
       left: 0;
       bottom: 82px;
     }
-    &::after {
+    .obj-2 {
       right: 12px;
       top: 118px;
     }
@@ -409,6 +417,22 @@ body {
         font-weight: 700;
         margin: 0;
       }
+    }
+    .obj {
+      position: absolute;
+      width: 75px;
+      height: 144px;
+      background-color: $primary;
+      filter: blur(140px);
+      z-index: 1;
+    }
+    .obj-1 {
+      left: 0;
+      bottom: 82px;
+    }
+    .obj-2 {
+      right: 12px;
+      top: 118px;
     }
   }
   .enroll-section {
